@@ -1,17 +1,17 @@
 import express from 'express';
-import urlController from '../controllers/urlController.js';
+import { welcome, shortenUrl, redirectUrl, getUrlStats } from '../controllers/urlController.js';
 
 const router = express.Router();
 
-router.get('/', urlController.welcome);
+router.get('/', welcome);
 
 // URL shortening endpoint
-router.post('/shorten', urlController.shortenUrl.bind(urlController));
+router.post('/shorten', shortenUrl);
 
 // URL redirection endpoint
-router.get('/:shortCode', urlController.redirectUrl.bind(urlController));
+router.get('/:shortCode', redirectUrl);
 
 // URL statistics endpoint
-router.get('/stats/:shortCode', urlController.getUrlStats.bind(urlController));
+router.get('/stats/:shortCode', getUrlStats);
 
 export default router;
