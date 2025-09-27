@@ -19,7 +19,15 @@ class UrlController {
             }
 
             const result = await urlService.createShortUrl(longUrl, ttl);
-            res.status(200).json(result);
+            
+            if (result.isExisting) {
+                res.status(200).json({ 
+                    ...result, 
+                    message: 'URL already shortened' 
+                });
+            } else {
+                res.status(201).json(result);
+            }
 
         } catch (error) {
             console.error('Error shortening URL:', error);
