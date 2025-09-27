@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "url-shortener",
+    "redis",
+    "express",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "A modular URL shortener service built with Express.js and Redis",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "redis": "^5.8.2"
+  }
+}
